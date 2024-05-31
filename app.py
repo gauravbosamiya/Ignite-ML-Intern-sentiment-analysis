@@ -5,10 +5,15 @@ warnings.filterwarnings('ignore')
 import nltk
 from nltk.corpus import stopwords
 nltk.download('stopwords')
+nltk.download('punkt')
 import string
 from nltk.stem import PorterStemmer
 import re
 import time
+import os
+
+# Set the NLTK data path
+# nltk.data.path.append(os.path.join(os.path.dirname(__file__), 'nltk_data'))
 
 with open('rfc_sentiment_model', 'rb') as file:
     model = pickle.load(file)
