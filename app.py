@@ -15,36 +15,9 @@ import os
 # Set the NLTK data path
 # nltk.data.path.append(os.path.join(os.path.dirname(__file__), 'nltk_data'))
 
-# with open('rfc_sentiment_model', 'rb') as file:
-#     model = pickle.load(file)
+with open('rfc_sentiment_model', 'rb') as file:
+    model = pickle.load(file)
 
-
-logging.basicConfig(level=logging.INFO)
-
-# Set the NLTK data path
-nltk_data_path = os.path.join(os.path.dirname(__file__), 'nltk_data')
-nltk.data.path.append(nltk_data_path)
-
-# Ensure NLTK data is downloaded
-logging.info("Downloading NLTK data...")
-nltk.download('punkt', download_dir=nltk_data_path)
-nltk.download('stopwords', download_dir=nltk_data_path)
-logging.info("NLTK data downloaded.")
-
-# Load the sentiment model
-model_path = os.path.join(os.path.dirname(__file__), 'rfc_sentiment_model')
-try:
-    with open(model_path, 'rb') as file:
-        rfc_sentiment_model = pickle.load(file)
-    logging.info("Model loaded successfully.")
-except FileNotFoundError as e:
-    logging.error(f"Model file not found: {e}")
-    st.error("Model file not found. Please ensure the model file is in the correct location.")
-    st.stop()
-except Exception as e:
-    logging.error(f"Error loading model: {e}")
-    st.error("An error occurred while loading the model.")
-    st.stop()
 
 
  
