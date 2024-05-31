@@ -21,7 +21,7 @@ with open('rfc_sentiment_model', 'rb') as file:
 
 
  
-st.set_page_config(layout='wide')
+st.set_page_config(layout='wide',page_title='Sentiment Analysis')
 st.title(':blue[Twitter Sentiment Analysis]')
 
 # function for text preprocessing
